@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%; padding: 0; margin: 0 0 0 0; display: flex">
+<head>
+    <meta charset="UTF-8"/>
+    <title>DN1</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="icon" href="./favicon.png"/>
+</head>
+
+<body style="height: 100%; width: 100%; padding: 0; margin: 0 0 0 0; display: flex;">
+<meni>
+    <korak id="osebe" style="background-color: #f2f2f2">
+        <input type="radio" id="prvi" value="osebe" checked/>
+        <label for="prvi"><i class="fas fa-users"></i>Osnovni podatki</label>
+        <div class="odmik">
+            <opomba>Za izračun skupne vrednosti bona izberite število oseb in nočitev.</opomba>
+            <input id="odrasli" type="number" min="0" max="100" value="2" width="30%"/> x odrasli <br/>
+            <input id="otroci" type="number" min="0" max="100" value="1" width="30%"/> x otrok <br/>
+            <input id="nocitev" type="number" min="1" max="100" value="3" width="30%"/> x nočitev <br/>
+            <div id="izracun" style="margin-top: 10px">
+                <label>Bon skupaj za: </label><label class="vsota">...</label> €
+            </div>
+        </div>
+    </korak>
+
+    <korak id="parki">
+        <input type="radio" id="drugi" value="parki"/>
+        <label for="drugi"><i class="fas fa-tree"></i>Interesni parki</label>
+        <div class="odmik">
+            <opomba>Na zemljevidu izberite 2 parka.</opomba>
+            <table id="tabelaParkov"></table>
+        </div>
+    </korak>
+
+    <korak id="hoteli">
+        <input type="radio" id="tretji" value="hoteli"/>
+        <label for="tretji"><i class="fas fa-hotel"></i>Hoteli</label> <br/>
+        <div class="odmik">
+            <opomba>Izberite razdaljo za prikaz bližnjih hotelov in podrobnosti najbližjega hotela.</opomba>
+            <input type="number" id="radij" value="10" min="10" max="30"/> km
+        </div>
+    </korak>
+</meni>
+
+<telo id="mapa_id"></telo>
+
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</body>
+</html>
