@@ -150,7 +150,10 @@ opomba {
 }
 
 #izracun {
-  margin-top: 10px
+  margin-top: 10px;
+  color: indianred;
+  text-align: right;
+  margin-right: 4px;
 }
 
 input[type=number]:focus {
