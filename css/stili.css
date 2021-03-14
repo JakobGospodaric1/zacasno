@@ -59,6 +59,10 @@ input[type="button"] {
   cursor: pointer;
 }
 
+#gumb {
+  margin-left: 30px;
+}
+
 button:hover,
 input[type="button"]:hover {
   background: #c30c21;
