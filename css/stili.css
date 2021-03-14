@@ -1,5 +1,18 @@
 html {
   font-family: "Arial";
+  height: 100%; 
+  width: 100%; 
+  padding: 0; 
+  margin: 0 0 0 0; 
+  display: flex
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 0 0;
+  display: flex; 
 }
 
 meni {
@@ -17,6 +30,10 @@ korak {
   padding-bottom: 15px;
   padding-top: 10px;
   display: block;
+}
+
+#osebe {
+  background-color: #f2f2f2;
 }
 
 korak:last-child {
@@ -119,4 +136,8 @@ opomba {
 
 #najblizjiHotel {
   margin-top: 10px;
+}
+
+#izracun {
+  margin-top: 10px
 }

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html style="height: 100%; width: 100%; padding: 0; margin: 0 0 0 0; display: flex">
+<html>
 <head>
     <meta charset="UTF-8"/>
     <title>DN1</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
     <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/stili.css">
     <link rel="icon" href="./favicon.png"/>
 </head>
 
-<body style="height: 100%; width: 100%; padding: 0; margin: 0 0 0 0; display: flex;">
+<body>
 <meni>
-    <korak id="osebe" style="background-color: #f2f2f2">
+    <korak id="osebe">
         <input type="radio" id="prvi" value="osebe" checked/>
         <label for="prvi"><i class="fas fa-users"></i>Osnovni podatki</label>
         <div class="odmik">
@@ -18,7 +19,7 @@
             <input id="odrasli" type="number" min="0" max="100" value="2" width="30%"/> x odrasli <br/>
             <input id="otroci" type="number" min="0" max="100" value="1" width="30%"/> x otrok <br/>
             <input id="nocitev" type="number" min="1" max="100" value="3" width="30%"/> x nočitev <br/>
-            <div id="izracun" style="margin-top: 10px">
+            <div id="izracun">
                 <label>Bon skupaj za: </label><label class="vsota">...</label> €
             </div>
         </div>
