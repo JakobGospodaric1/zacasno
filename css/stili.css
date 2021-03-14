@@ -42,11 +42,18 @@ korak:last-child {
 
 #tabelaParkov {
   border-spacing: 0 5px;
+  font-size: 90%;
 }
 
 #tabelaParkov th,
 #tabelaParkov td {
   border: 0px;
+  width: 100%;
+
+  vertical-align: top;
+  text-align: left;
+
+  padding-right: 10px;
 }
 
 button,
