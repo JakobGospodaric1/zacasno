@@ -141,3 +141,9 @@ opomba {
 #izracun {
   margin-top: 10px
 }
+
+input[type=number]:focus {
+  background-color: #fde7ea;
+  color: #a80b1d;
+  font-weight: bold;
+}
