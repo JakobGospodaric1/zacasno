@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="css/font-awesome.css"/>
     <link rel="stylesheet" href="css/stili.css">
     <link rel="icon" href="./favicon.png"/>
+
+    <script type="text/javascript" src="skripte/midpoint-util.js"></script>
+    <script type="text/javascript" src="skripte/skripta.js"></script>
 </head>
 
 <body>
 <meni>
     <korak id="osebe">
-        <input type="radio" id="prvi" value="osebe" checked/>
+        <input type="radio" id="prvi" name="tocke" value="osebe" checked/>
         <label for="prvi"><i class="fas fa-users"></i>Osnovni podatki</label>
         <div class="odmik">
             <opomba>Za izračun skupne vrednosti bona izberite število oseb in nočitev.</opomba>
@@ -26,7 +29,7 @@
     </korak>
 
     <korak id="parki">
-        <input type="radio" id="drugi" value="parki"/>
+        <input type="radio" id="drugi" name="tocke" value="parki"/>
         <label for="drugi"><i class="fas fa-tree"></i>Interesni parki</label>
         <div class="odmik">
             <opomba>Na zemljevidu izberite 2 parka.</opomba>
@@ -35,7 +38,7 @@
     </korak>
 
     <korak id="hoteli">
-        <input type="radio" id="tretji" value="hoteli"/>
+        <input type="radio" id="tretji" name="tocke" value="hoteli"/>
         <label for="tretji"><i class="fas fa-hotel"></i>Hoteli</label> <br/>
         <div class="odmik">
             <opomba>Izberite razdaljo za prikaz bližnjih hotelov in podrobnosti najbližjega hotela.</opomba>
