@@ -121,15 +121,22 @@ function izracunajVsoto(kolicina, znesek) {
 function izberiKorak(izbirniGumb) {
     odstraniVseTockeNaZemljevidu();
 
+    document.getElementById(izbirniGumb.value).style.backgroundColor = "#f2f2f2";
     // Izvedi akcijo glede na izbran korak
     switch (izbirniGumb.value) {
         case "osebe":
+            document.getElementById("parki").style.backgroundColor = "transparent";
+            document.getElementById("hoteli").style.backgroundColor = "transparent";
+
             omogociOsnovePodatke(true);
 
             if (radijHotelov) mapa.removeLayer(radijHotelov);
 
             break;
-        case "narava":
+        case "parki":
+            document.getElementById("osebe").style.backgroundColor = "transparent";
+            document.getElementById("hoteli").style.backgroundColor = "transparent";
+
             omogociOsnovePodatke(false);
 
             if (radijHotelov) mapa.removeLayer(radijHotelov);
@@ -140,7 +147,11 @@ function izberiKorak(izbirniGumb) {
             });
             break;
         case "hoteli":
+            document.getElementById("osebe").style.backgroundColor = "transparent";
+            document.getElementById("parki").style.backgroundColor = "transparent";
+
             prikaziHoteleZnotrajRadija();
+
             break;
     }
 }
