@@ -256,7 +256,7 @@ function preveriPogojeSklopaHoteli(callback) {
 function dodajParkMedKandidate(indeks) {
     var tabelaParkov = document.getElementById("tabelaParkov");
 
-    if (false) {
+    if (tabelaParkov.rows.length<2 && !kandidatiParkov.includes(indeks)) {
         // Dodaj novo vrstico v seznam parkov
         var vrstica = tabelaParkov.insertRow(tabelaParkov.rows.length);
 
@@ -265,8 +265,8 @@ function dodajParkMedKandidate(indeks) {
         var stolpec1 = vrstica.insertCell(0);
         var stolpec2 = vrstica.insertCell(1);
 
-        stolpec1.innerHTML = "";
-        stolpec2.innerHTML = "";
+        stolpec1.innerHTML = "<b>" + parki[indeks].lastnosti.ime + "</b> z oceno <b>" + parki[indeks].lastnosti.ocena + "</b>";
+        stolpec2.innerHTML = "<button  class='rob senca' onclick='odstraniKotKandidata(this, "+indeks+")'><i class='far fa-trash-alt'></i></button>";
 
         // Dodaj park na seznam
         kandidatiParkov.push(indeks);
