@@ -165,7 +165,7 @@ function prikaziHoteleZnotrajRadija() {
 
     // Preveri pogoje: izbrana 2 parka in vsota v osnovnih podatkih večjo od 0
     preveriPogojeSklopaHoteli(function () {
-        var srednjaTocka = -1;
+        var srednjaTocka = middlePoint(parki[kandidatiParkov[0]].koordinate.lat, parki[kandidatiParkov[0]].koordinate.lng, parki[kandidatiParkov[1]].koordinate.lat, parki[kandidatiParkov[1]].koordinate.lng);
 
         // Prikaži hotele glede na radij
         pridobiPodatke("hoteli", function (jsonRezultat, vrstaInteresneTocke) {
@@ -177,7 +177,16 @@ function prikaziHoteleZnotrajRadija() {
             odstraniVseTockeNaZemljevidu();
 
             // Nariši radij (rdeč krog v središčni točki med izbranima parkoma)
-            radijHotelov = undefined;
+            radijHotelov = new L.circle([srednjaTocka[1], srednjaTocka[0]], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: document.getElementById("radij").value*1000,
+                stroke: false
+            });
+            radijHotelov.addTo(mapa);
+
+            izracunajVseHoteleVRadiju(srednjaTocka[1], srednjaTocka[0], document.getElementById("radij").value);
 
             // Poišči vse hotele znotraj radija
 
@@ -228,6 +237,10 @@ function izracunajVseHoteleVRadiju(lat, lng, radij) {
         // Če je oddaljenost hotela manjša od radija, ga dodaj na seznam
         if (oddaljenost <= radij) {
             kandidatiHotelov.push(hoteli[i]);
+            if(oddaljenost < najblizjiHotelOddaljenost){
+                najblizjiHotelNaziv = hoteli[i].lastnosti.ime + ", " + hoteli[i].lastnosti.mesto;
+                najblizjiHotelOddaljenost = oddaljenost;
+            }
         }
     }
 }
@@ -240,6 +253,17 @@ function izracunajVseHoteleVRadiju(lat, lng, radij) {
  */
 function preveriPogojeSklopaHoteli(callback) {
     var sporocilo = "";
+
+    if (vsota==0) {
+        sporocilo = "Skupni znesek v osnovnih podatkih mora biti več kot 0 €!";
+        alert(sporocilo);
+    }
+
+    if (kandidatiParkov.length!=2) {
+        sporocilo = "Izbrati je potrebno 2 parka!";
+        alert(sporocilo);
+    }
+    
 
     if (!sporocilo) {
         callback();
