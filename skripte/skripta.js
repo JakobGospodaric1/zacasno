@@ -237,6 +237,10 @@ function izracunajVseHoteleVRadiju(lat, lng, radij) {
         // Če je oddaljenost hotela manjša od radija, ga dodaj na seznam
         if (oddaljenost <= radij) {
             kandidatiHotelov.push(hoteli[i]);
+            if(oddaljenost < najblizjiHotelOddaljenost){
+                najblizjiHotelNaziv = hoteli[i].lastnosti.ime + ", " + hoteli[i].lastnosti.mesto;
+                najblizjiHotelOddaljenost = oddaljenost;
+            }
         }
     }
 }
